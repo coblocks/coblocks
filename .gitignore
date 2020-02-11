@@ -11,6 +11,7 @@ wordpress/
 .ftppass
 coverage/
 cypress/
+!.dev/tests/cypress/
 .dev/tests/cypress/screenshots
 sftp.json
 dist/*

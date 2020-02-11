@@ -9,7 +9,9 @@ before( function() {
 
 // Maintain WordPress logged in state
 Cypress.Cookies.defaults( {
-  whitelist: /wordpress_.*/
+  whitelist: function( cookie ) {
+    return ( ( cookie.name ).includes( 'wporg_' ) || ( cookie.name ).includes( 'wordpress_' ) );
+  }
 } );
 
 // Custom uploadFile command
@@ -23,7 +25,7 @@ Cypress.Commands.add( 'uploadFile', ( fileName, fileType, selector ) => {
       const dataTransfer = new DataTransfer()
       const el = subject[0]
 
-      dataTransfer.items.add(testFile)
+      dataTransfer.items.add( testFile )
       el.files = dataTransfer.files
     } );
   } );
