@@ -1,0 +1,18 @@
+{
+	"name": "coblocks/opentable",
+	"category": "layout",
+	"attributes": {
+		"restaurantIDs": {
+			"type": "array",
+			"default": []
+		},
+		"align": {
+			"type": "string",
+			"default": "center"
+		},
+		"pinned": {
+			"type": "boolean",
+			"default": false
+		}
+	}
+}
